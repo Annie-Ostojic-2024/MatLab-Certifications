@@ -1,0 +1,32 @@
+% Wrote a program to calculate BMI measurements and give helpful advice; parts that I self-coded are marked below in the code
+% MatLab programming udemy course (completed) - BMI System Measurement Program - written in MatLab (.m script file)
+% certification showing passing of the course: https://www.udemy.com/certificate/UC-648624f2-7971-4ab0-8a53-43b707dd60d5/
+
+clc;
+clear;
+close all;
+
+disp('This is a BMI Calculator')
+disp(' ')
+
+unit = input('Enter 1 for Imperial Units or 2 for SI units: ');
+
+if unit == 1
+  fprintf('%s Unit of Measurement was selected. ', 'Imperial')
+  disp (' ')
+
+%% For user's information in Imperial Units:
+
+disp('Your measurement will be in imperial units')
+disp(' ')
+Weight = input('Enter your weight (lbs): ');
+Height = input('Enter your height (ft): ');
+BMI = (Weight / (Height^2) ) * 4.88;  % BMI calculation
+
+disp(' ')
+fprintf('Your BMI is %.2f .\n', BMI) % user's current BMI
+
+disp(' ')
+fprintf(CODE TO BE COMPLETED)
+
+

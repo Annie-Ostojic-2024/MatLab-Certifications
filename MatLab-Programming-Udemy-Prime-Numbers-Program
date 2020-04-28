@@ -1,5 +1,26 @@
-# Wrote a program to identify prime numbers; parts that I self-coded are marked below in the code
+# Wrote a program to identify prime numbers; entire program self-coded (given instructions for task to code)
 # MatLab Programming Udemy course (completed) - Prime Numbers Program 
 # certification showing passing of the course: https://www.udemy.com/certificate/UC-648624f2-7971-4ab0-8a53-43b707dd60d5/
 
-CODE HERE
+clc;
+clear;
+close all;
+
+% function output = p1(N) ANOTHER OPTION THAT COULD BE USED INSTEAD (EXPLANATION BELOW)
+% name of file (p1.m) -> used to create a function into matlab from the prime number program made below
+
+N = input('Enter a positive integer for the program: ');
+
+tic
+for a=2:N
+  for b=2:N    
+    if(~mod(a,b))        
+      break;  % means that the number is not a prime number
+  end
+end
+
+if (b > (a/b))
+  fprintf(' %d number is a prime number. \n', N)
+end
+end
+toc

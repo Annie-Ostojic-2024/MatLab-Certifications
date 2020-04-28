@@ -71,6 +71,12 @@ if(BMI <= 16.5);
               disp('You are Obsese Level III. Please see a doctor soon.')
               disp(' ')
               fprintf('You need to lose a minimum of %.2f lbs and maximum of %.2f lbs\n', Weight-Wmax, Weight-Wmin)
+              end
+            end
+          end
+        end
+      end
+    end
 end
 
 if unit == 2

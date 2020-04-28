@@ -9,7 +9,7 @@ close all;
 disp('This is a BMI Calculator')
 disp(' ')
 
-unit = input('Enter 1 for Imperial Units or 2 for SI units: ');
+unit = input('Enter 1 for Imperial Units or 2 for Metric/SI units: ');
 
 if unit == 1
   fprintf('%s Unit of Measurement was selected. ', 'Imperial')
@@ -27,17 +27,118 @@ disp(' ')
 fprintf('Your BMI is %.2f .\n', BMI) % user's current BMI
 
 disp(' ')
-fprintf(CODE TO BE COMPLETED)
+fprintf('Your current weight is %.2f .\n', Weight) % user's current weight (from input)
+
+Wmin = 18.5 * (Height^2) * (1/4.88);
+disp (' ')
+disp(['Your minimum healthy weight is: ' num2str(Wmin), 'lbs'])
+
+Wmax = 25 * (Height^2) * (1/4.88);
+disp(['Your maximum healthy weight is: ' num2str(Wmax), 'lbs'])
+
+%% BMI Calculations in Imperial Units:
+
+if(BMI <= 16.5);
+  disp('You are severely underweight. Please schedule an appointment with a nutritionist immediately.')
+  disp(' ')
+  fprintf('You need to gain a minimum of %.2f lbs and maximum of %.2f lbs\n', Wmin-Weight, Wmax-Weight)
+    
+    elseif( (BMI > 16.5) && (BMI <= 18.5) )
+    disp('You are severely underweight. Please schedule an appointment with a nutritionist.')
+    disp(' ')
+    fprintf('You need to gain a minimum of %.2f lbs and maximum of %.2f lbs\n', Wmin-Weight, Wmax-Weight)
+        
+      elseif( (BMI > 18.5) && (BMI <= 25) )
+      disp('You are a normal weight. Keep up your normal routine.')
+      disp(' ')
+      
+        elseif( (BMI > 25) && (BMI <= 30) )
+        disp('You are overweight. Please try to be more active and eat healthier.')
+        disp(' ')
+        fprintf('You need to lose a minimum of %.2f lbs and maximum of %.2f lbs\n', Weight-Wmax, Weight-Wmin)
+        
+          elseif( (BMI > 30) && (BMI <= 35) )
+          disp('You are Obese Level I. Please see a doctor for advice.')
+          disp(' ')
+          fprintf('You need to lose a minimum of %.2f lbs and maximum of %.2f lbs\n', Weight-Wmax, Weight-Wmin)
+            
+            elseif( (BMI > 35) && (BMI <= 40) )
+            disp('You are Obese Level II. Please see a doctor for advice.')
+            disp(' ')
+            fprintf('You need to lose a minimum of %.2f lbs and maximum of %.2f lbs\n', Weight-Wmax, Weight-Wmin)
+            
+              elseif( (BMI > 40) )
+              disp('You are Obsese Level III. Please see a doctor soon.')
+              disp(' ')
+              fprintf('You need to lose a minimum of %.2f lbs and maximum of %.2f lbs\n', Weight-Wmax, Weight-Wmin)
+end
+
+if unit == 2
+  fprintf('%s Unit of Measurement was selected. ', 'Metric')
+  disp(' ')
+  
+%% For User's information in Metric/SI Units:
+disp('Your measurement will be in metric (SI) units')
+disp(' ')
+Weight = input('Enter your weight (kg): ');
+Height = input('Enter your height (m): ');
+BMI = (Weight / (Height^2) );  % BMI calculation (no conversion needed)
+
+disp(' ')
+fprintf('Your BMI is %.2f .\n', BMI) % user's current BMI
+
+disp(' ')
+fprintf('Your current weight is %.2f .\n', Weight) % user's current weight (from input)
+
+Wmin = 18.5 * (Height^2);
+disp (' ')
+disp(['Your minimum healthy weight is: ' num2str(Wmin), 'kg'])
+
+Wmax = 25 * (Height^2);
+disp(['Your maximum healthy weight is: ' num2str(Wmax), 'kg'])
+
+%% BMI Calculations in Metric/SI Units:
+
+if(BMI <= 16.5);
+  disp('You are severely underweight. Please schedule an appointment with a nutritionist immediately.')
+  disp(' ')
+  fprintf('You need to gain a minimum of %.2f kg and maximum of %.2f kg\n', Wmin-Weight, Wmax-Weight)
+    
+    elseif( (BMI > 16.5) && (BMI <= 18.5) )
+    disp('You are severely underweight. Please schedule an appointment with a nutritionist.')
+    disp(' ')
+    fprintf('You need to gain a minimum of %.2f kg and maximum of %.2f kg\n', Wmin-Weight, Wmax-Weight)
+        
+      elseif( (BMI > 18.5) && (BMI <= 25) )
+      disp('You are a normal weight. Keep up your normal routine.')
+      disp(' ')
+      
+        elseif( (BMI > 25) && (BMI <= 30) )
+        disp('You are overweight. Please try to be more active and eat healthier.')
+        disp(' ')
+        fprintf('You need to lose a minimum of %.2f kg and maximum of %.2f kg\n', Weight-Wmax, Weight-Wmin)
+        
+          elseif( (BMI > 30) && (BMI <= 35) )
+          disp('You are Obese Level I. Please see a doctor for advice.')
+          disp(' ')
+          fprintf('You need to lose a minimum of %.2f kg and maximum of %.2f kg\n', Weight-Wmax, Weight-Wmin)
+            
+            elseif( (BMI > 35) && (BMI <= 40) )
+            disp('You are Obese Level II. Please see a doctor for advice.')
+            disp(' ')
+            fprintf('You need to lose a minimum of %.2f kg and maximum of %.2f kg\n', Weight-Wmax, Weight-Wmin)
+            
+              elseif( (BMI > 40) )
+              disp('You are Obsese Level III. Please see a doctor soon.')
+              disp(' ')
+              fprintf('You need to lose a minimum of %.2f kg and maximum of %.2f kg\n', Weight-Wmax, Weight-Wmin)
+              end
+            end
+          end
+        end
+      end
+    end
+end
 
 
-
-
-
-
-
-
-
-
-
-
-
+end           
